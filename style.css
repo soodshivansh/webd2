@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 5rem;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+nav{
+    font-family: cursive;
+}
+.logo-name{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family:sans-serif;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 3rem;
+    font-size: 1rem;
+}
+.navbar-list li a:hover,
+.navbar-list li a:active{
+    color: orange;
+}
+.mobile-nav-btn{
+    font-size: 2rem;
+    display: none;
+}
+.mobile-nav-btn .close[name="close"]{
+    display: none;
+}
+.section{
+    padding: 5rem 0;
+}
+.container{
+    max-width: 130rem;
+    margin: 0 10rem;
+}
+.grid{
+    display: grid;
+    gap: 5rem;
+}
+.grid-two-column{
+    grid-template-columns: repeat(2,1fr);
+}
+.btn{
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding: 1rem 3rem;
+    background-color: rgb(233, 209, 165);
+    transition: all 0.2s linear;
+    border-radius: 2rem;
+}
+.btn:hover,
+.btn:active{
+    transform: scale(3);
+}
+.section-hero{
+    position: relative;
+}
+.section-hero::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 50%;
+    background: whitesmoke;
+    z-index: -1;
+}
+.primary-heading{
+    font-size: 2.9rem;
+    font-weight: 700;
+}
+.section-hero .para{
+    margin-top: 2rem;
+    margin-bottom: 3.2rem;
+}
+.hero-icons{
+    margin-top: 4.2rem;
+}
+.hero-icons .icon{
+    font-size: 3rem;
+    position: relative;
+}
+.hero-icons h2{
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+.section-hero .hero-icon-style .para{
+    line-height: 1.3rem;
+    font-size: 1rem;
+    margin: 0;
+}
+.hero-image{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+.hero-image img{
+    height: 85%;
+    position: relative;
+    top: -10%;
+    box-shadow: 0 0 6rem 0 black;
+    z-index: 0;
+}
+.hero-img-overlay{
+    position: absolute;
+    bottom: -18%;
+    left: -10%;
+    background: rgb(233, 209, 165);
+    padding: 1.8rem 1rem;
+    z-index: 1;
+}
+.hero-img-overlay .para{
+    color: white;
+}
+.hero-img-overlay .para:nth-child(2){
+    margin: 0;
+    font-weight: bold;
+}
+.hero-img-overlay .para:last-child{
+    margin: 0;
+}
+.container {
+    max-width: 100%;
+}
+@media (max-width: 1250px) {
+    .hero-image img{
+        height: 70%;
+        top: 0%;
+    }
+    .hero-img-overlay{
+        bottom: -5%;
+    }
+    .section-hero::before{
+        bottom: 7%;
+        right: 4%;
+    }
+}
+@media (max-width: 1110px){
+    .primary-heading{
+        font-size: 2rem;
+    }
+    .container{
+        margin: 0 10rem;
+    }
+    .hero-img-overlay{
+        bottom: -8%;
+    }
+    .hero-icon-style .secondary-heading{
+        font-size: 1.5rem;
+    }
+    .para{
+        font-size: 15px;
+    }
+}
+@media (max-width: 960px){
+    .grid-two-column{
+        grid-template-columns: 1fr;
+    }
+    .hero-icons .grid-two-column{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hero-image img{
+        top: 0%;
+        right: 10%;
+    }
+    .hero-img-overlay{
+        bottom: -6%;
+        left: 0%;
+        padding: 0.5rem 1rem;
+        width: 90%;
+        height: 45%;
+    }
+    .section-hero::before{
+        bottom: 5%;
+        right: 15%;
+        width: 30%;
+        height: 40%;
+    }
+}
+@media (max-width: 850px){
+    nav{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgb(0, 0, 0);
+
+        display: flex;
+        justify-content: center;
+        align-items: top;
+
+        transform: translateX(100%);
+        transition: all 0.3s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        overflow-x: hidden;
+    }
+    .navbar-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    } 
+    .mobile-nav-btn{
+        display: block;
+        z-index: 9999;
+    }
+    .active nav{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+        z-index: 999;
+        color: aliceblue;
+        left: 0%;
+    }
+    .active .mobile-nav-btn .close{
+        display: block;
+        color: rgb(0, 0, 0);
+    }
+    .active .mobile-nav-btn .menu{
+        display: none;
+    }
+}
+@media (max-width: 657px){
+    .container{
+        max-width: 720px;
+        margin: 0 6rem;
+    }
+    .hero-img-overlay{
+        bottom: -6%;
+        left: 0%;
+        padding: 0 1rem;
+        width: 90%;
+        height: 50%;
+    }
+}
+@media (max-width: 417px){
+    .container{
+        margin: 0 2rem;
+    }
+    .primary-heading{
+        font-size: 1.8rem;
+    }
+    .para{
+        font-size: 12px;
+    }
+    .btn{
+        font-size: 1.5rem;
+        padding: 0.5rem 2rem;
+    }
+    .hero-icons .hero-icon-style .para{
+        font-size: 12px;
+        line-height: normal;
+    }
+    .hero-img-overlay{
+        bottom: -6%;
+        left: 0%;
+        padding: 0 1rem;
+        width: 90%;
+        height: 45%;
+    }
+    .hero-img-overlay .para{
+        color: white;
+        font-size: 14px;
+    }
+    .section-hero::before{
+        bottom: 2%;
+        right: 2%;
+        width: 30%;
+        height: 40%;
+    }
+    .logo-name{
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family:sans-serif;
+    }
+    header{
+        height: 2rem;
+        padding: 2rem 2rem;
+    }
+    .section{
+        padding: 3rem 0;
+    }
+}
+@media (max-width: 367px){
+    .primary-heading{
+        font-size: 1.5rem;
+    }
+    .hero-icons .icon{
+        font-size: 2.5rem;
+        position: relative;
+    }
+    .btn{
+        font-size: 1.1rem;
+        padding: 0.5rem 2rem;
+    }
+    .hero-image img{
+        height: 55%;
+        top: 0%;
+    }
+    .hero-img-overlay{
+        bottom: 2%;
+        left: -5%;
+        padding: 0.5rem 1rem;
+    }
+    .section-hero::before{
+        bottom:5.5%;
+        right: 5%;
+        width: 30%;
+        height: 40%;
+    }
+    .container{
+        max-width: 72px;
+    }
+}
